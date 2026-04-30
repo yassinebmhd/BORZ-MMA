@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BORZ PROTEIN | Dépassement & Honneur</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#ccff00',
+                        darkBg: '#0a0a0a',
+                        cardBg: '#111111'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-white/10 z-40 px-6 py-4 flex justify-between items-center transition-all">
+        <div class="flex items-center gap-2">
+            <h1 class="font-serif text-2xl tracking-widest text-white font-bold cursor-pointer">
+                BORZ<span class="text-neon">PROTEIN</span>
+            </h1>
+        </div>
+        <button onclick="toggleCart()" class="relative text-white hover:text-neon transition duration-300">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-neon text-black text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center border border-black">0</span>
+        </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4" 
+             style="background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,1)), url('images/la sanne.webp') center/cover no-repeat;">
+        <h2 class="font-serif text-5xl md:text-7xl text-white mb-6 tracking-wide drop-shadow-lg">KOUL BACH<span class="text-neon"> TWLI GHOUL.</span></h2>
+        <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 font-sans tracking-wide">
+            Carburant premium pour la performance. <br class="hidden md:block"> Sans sucre ajouté, sans pain.
+        </p>
+        <a href="#menu" class="bg-neon text-black font-bold py-3 px-8 rounded uppercase tracking-wider hover:bg-white transition duration-300 shadow-[0_0_20px_rgba(204,255,0,0.4)]">
+            Voir le menu
+        </a>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-3xl md:text-4xl text-white mb-2">NOTRE MENU</h2>
+            <div class="h-1 w-16 bg-neon mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- PLAT 1 -->
+            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neon transition duration-300 group shadow-2xl flex flex-col justify-between">
+                <div>
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?q=80&w=2069&auto=format&fit=crop" alt="Le Combattant" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardBg to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-white font-bold mb-2">Le Combattant</h3>
+                        <p class="text-gray-400 text-sm mb-4">Poulet grillé, riz basmati, brocolis.</p>
+                        <div class="mb-5 flex flex-wrap gap-2">
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">Riche en Protéines</span>
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">0 Sucre</span>
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">Sans Pain</span>
+                        </div>
+                        <div class="bg-black p-3 rounded-lg border border-white/5 mb-6">
+                            <div class="text-center mb-2 border-b border-white/10 pb-2">
+                                <span class="text-white font-bold text-xl">550 <span class="text-xs text-gray-400 font-normal uppercase tracking-wider">kcal</span></span>
+                            </div>
+                            <div class="grid grid-cols-3 text-center text-xs">
+                                <div><span class="block text-neon font-bold text-sm">60g</span><span class="text-gray-500 uppercase">Protéines</span></div>
+                                <div><span class="block text-white font-bold text-sm">45g</span><span class="text-gray-500 uppercase">Glucides</span></div>
+                                <div><span class="block text-white font-bold text-sm">12g</span><span class="text-gray-500 uppercase">Lipides</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 flex justify-between items-center">
+                    <span class="text-white font-serif font-bold text-xl">75 MAD</span>
+                    <button onclick="addToCart('Le Combattant', 75)" class="bg-neon text-black font-bold py-2 px-4 rounded hover:bg-white hover:scale-105 transition duration-300">
+                        Ajouter <i class="fas fa-plus ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PLAT 2 -->
+            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neon transition duration-300 group shadow-2xl flex flex-col justify-between">
+                <div>
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=2069&auto=format&fit=crop" alt="Force Brute" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-white font-bold mb-2">Force Brute</h3>
+                        <p class="text-gray-400 text-sm mb-4">Pavé de bœuf, patates douces rôties.</p>
+                        <div class="mb-5 flex flex-wrap gap-2">
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">Riche en Protéines</span>
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">Sans Pain</span>
+                        </div>
+                        <div class="bg-black p-3 rounded-lg border border-white/5 mb-6">
+                            <div class="text-center mb-2 border-b border-white/10 pb-2">
+                                <span class="text-white font-bold text-xl">620 <span class="text-xs text-gray-400 font-normal uppercase tracking-wider">kcal</span></span>
+                            </div>
+                            <div class="grid grid-cols-3 text-center text-xs">
+                                <div><span class="block text-neon font-bold text-sm">55g</span><span class="text-gray-500 uppercase">Protéines</span></div>
+                                <div><span class="block text-white font-bold text-sm">40g</span><span class="text-gray-500 uppercase">Glucides</span></div>
+                                <div><span class="block text-white font-bold text-sm">20g</span><span class="text-gray-500 uppercase">Lipides</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 flex justify-between items-center">
+                    <span class="text-white font-serif font-bold text-xl">90 MAD</span>
+                    <button onclick="addToCart('Force Brute', 90)" class="bg-neon text-black font-bold py-2 px-4 rounded hover:bg-white hover:scale-105 transition duration-300">
+                        Ajouter <i class="fas fa-plus ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PLAT 3 -->
+            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neon transition duration-300 group shadow-2xl flex flex-col justify-between">
+                <div>
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2070&auto=format&fit=crop" alt="Sèche Borz" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-white font-bold mb-2">Sèche Borz</h3>
+                        <p class="text-gray-400 text-sm mb-4">Dos de cabillaud, quinoa, fondue de poireaux.</p>
+                        <div class="mb-5 flex flex-wrap gap-2">
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">Faible en Calories</span>
+                            <span class="bg-black border border-white/10 text-gray-300 text-xs px-2 py-1 rounded">Sans Pain</span>
+                        </div>
+                        <div class="bg-black p-3 rounded-lg border border-white/5 mb-6">
+                            <div class="text-center mb-2 border-b border-white/10 pb-2">
+                                <span class="text-white font-bold text-xl">400 <span class="text-xs text-gray-400 font-normal uppercase tracking-wider">kcal</span></span>
+                            </div>
+                            <div class="grid grid-cols-3 text-center text-xs">
+                                <div><span class="block text-neon font-bold text-sm">45g</span><span class="text-gray-500 uppercase">Protéines</span></div>
+                                <div><span class="block text-white font-bold text-sm">25g</span><span class="text-gray-500 uppercase">Glucides</span></div>
+                                <div><span class="block text-white font-bold text-sm">10g</span><span class="text-gray-500 uppercase">Lipides</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0 flex justify-between items-center">
+                    <span class="text-white font-serif font-bold text-xl">85 MAD</span>
+                    <button onclick="addToCart('Sèche Borz', 85)" class="bg-neon text-black font-bold py-2 px-4 rounded hover:bg-white hover:scale-105 transition duration-300">
+                        Ajouter <i class="fas fa-plus ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-black py-8 text-center">
+        <h2 class="font-serif text-xl tracking-widest text-white mb-4">BORZ<span class="text-neon">PROTEIN</span></h2>
+        <p class="text-gray-500 text-sm">© 2026 BORZ PROTEIN. Dépassement & Honneur.</p>
+    </footer>
+
+    <!-- CART SYSTEM & CHECKOUT (OFF-CANVAS) -->
+    <div id="cart-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm transition-opacity duration-300 opacity-0 cursor-pointer"></div>
+    
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-full md:w-[400px] bg-cardBg border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+        
+        <!-- HEADER PANIER -->
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-black">
+            <button id="back-to-cart-btn" onclick="showCartStep()" class="hidden text-gray-400 hover:text-white mr-4"><i class="fas fa-arrow-left"></i></button>
+            <h3 id="sidebar-title" class="font-serif text-xl text-white tracking-widest flex-1">TON PANIER</h3>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-neon transition duration-300"><i class="fas fa-times text-2xl"></i></button>
+        </div>
+        
+        <!-- ETAPE 1 : LISTE DES ARTICLES -->
+        <div id="cart-step" class="flex-1 flex flex-col overflow-hidden">
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <div class="text-gray-500 text-center mt-10 font-sans">Le panier est vide.</div>
+            </div>
+            
+            <div class="p-6 border-t border-white/10 bg-black">
+                <div class="flex justify-between text-white mb-2 text-sm text-gray-400">
+                    <span>Sous-total</span>
+                    <span id="cart-subtotal">0 MAD</span>
+                </div>
+                <div class="flex justify-between text-white font-bold mb-6 text-xl">
+                    <span>Total</span>
+                    <span id="cart-total" class="text-neon">0 MAD</span>
+                </div>
+                <button id="checkout-btn" onclick="showCheckoutStep()" class="w-full bg-neon text-black font-bold py-4 rounded uppercase tracking-wider hover:bg-white transition duration-300 opacity-50 cursor-not-allowed" disabled>
+                    Valider ma commande
+                </button>
+            </div>
+        </div>
+
+        <!-- ETAPE 2 : CONFIRMATION & WHATSAPP -->
+        <div id="checkout-step" class="hidden flex-1 flex flex-col overflow-hidden">
+            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                <p class="text-sm text-gray-400 mb-4">Dernière étape avant que la meute ne prépare ton repas. Remplis tes informations pour envoyer la commande sur WhatsApp.</p>
+                
+                <div>
+                    <label class="block text-white text-sm font-bold mb-2">Ton Nom / Prénom</label>
+                    <input type="text" id="customer-name" class="w-full bg-black border border-white/20 text-white rounded p-3 focus:outline-none focus:border-neon transition" placeholder="Ex: Rachid">
+                </div>
+                <div>
+                    <label class="block text-white text-sm font-bold mb-2">Adresse de livraison</label>
+                    <textarea id="customer-address" class="w-full bg-black border border-white/20 text-white rounded p-3 focus:outline-none focus:border-neon transition" rows="3" placeholder="Quartier, Rue, N° d'appartement..."></textarea>
+                </div>
+            </div>
+            
+            <div class="p-6 border-t border-white/10 bg-black">
+                <button onclick="sendWhatsAppOrder()" class="w-full bg-[#25D366] text-white font-bold py-4 rounded uppercase tracking-wider hover:bg-[#128C7E] transition duration-300 flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+                    <i class="fab fa-whatsapp text-xl"></i> Confirmer sur WhatsApp
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let cart = [];
+
+        // Gestion de l'affichage du panneau latéral
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            const backdrop = document.getElementById('cart-backdrop');
+            
+            if (sidebar.classList.contains('translate-x-full')) {
+                sidebar.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+                showCartStep(); // S'assurer qu'on ouvre toujours sur le panier
+                setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+            } else {
+                sidebar.classList.add('translate-x-full');
+                backdrop.classList.add('opacity-0');
+                setTimeout(() => backdrop.classList.add('hidden'), 300);
+            }
+        }
+
+        // Navigation entre Panier et Formulaire de Confirmation
+        function showCheckoutStep() {
+            if(cart.length === 0) return;
+            document.getElementById('cart-step').classList.add('hidden');
+            document.getElementById('checkout-step').classList.remove('hidden');
+            document.getElementById('sidebar-title').innerText = "LIVRAISON";
+            document.getElementById('back-to-cart-btn').classList.remove('hidden');
+        }
+
+        function showCartStep() {
+            document.getElementById('checkout-step').classList.add('hidden');
+            document.getElementById('cart-step').classList.remove('hidden');
+            document.getElementById('sidebar-title').innerText = "TON PANIER";
+            document.getElementById('back-to-cart-btn').classList.add('hidden');
+        }
+
+        // Logique du Panier
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+            
+            const sidebar = document.getElementById('cart-sidebar');
+            if (sidebar.classList.contains('translate-x-full')) {
+                toggleCart();
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCartUI();
+            if(cart.length === 0) showCartStep(); // Retour au panier si on vide tout dans le checkout
+        }
+
+        function updateQuantity(name, delta) {
+            const item = cart.find(i => i.name === name);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    removeFromCart(name);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartSubtotalElement = document.getElementById('cart-subtotal');
+            const cartCountElement = document.getElementById('cart-count');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<div class="text-gray-500 text-center mt-10 font-sans">Le panier est vide.</div>';
+                checkoutBtn.disabled = true;
+                checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                checkoutBtn.classList.remove('hover:bg-white');
+            } else {
+                checkoutBtn.disabled = false;
+                checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                checkoutBtn.classList.add('hover:bg-white');
+
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    count += item.quantity;
+
+                    cartItemsContainer.innerHTML += `
+                        <div class="flex flex-col bg-black p-4 rounded-lg border border-white/5 gap-3">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-white font-serif font-bold">${item.name}</h4>
+                                <button onclick="removeFromCart('${item.name}')" class="text-gray-600 hover:text-red-500 transition"><i class="fas fa-trash text-sm"></i></button>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3 bg-[#111111] rounded px-2 py-1 border border-white/10">
+                                    <button onclick="updateQuantity('${item.name}', -1)" class="text-gray-400 hover:text-white px-1">-</button>
+                                    <span class="text-white text-sm w-4 text-center">${item.quantity}</span>
+                                    <button onclick="updateQuantity('${item.name}', 1)" class="text-gray-400 hover:text-white px-1">+</button>
+                                </div>
+                                <span class="text-neon font-bold">${(item.price * item.quantity)} MAD</span>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            const formattedTotal = total + ' MAD';
+            cartSubtotalElement.innerText = formattedTotal;
+            cartTotalElement.innerText = formattedTotal;
+            
+            if (cartCountElement.innerText !== count.toString()) {
+                cartCountElement.innerText = count;
+                cartCountElement.classList.add('scale-150');
+                setTimeout(() => cartCountElement.classList.remove('scale-150'), 200);
+            }
+        }
+
+        // ENVOI DE LA COMMANDE VIA WHATSAPP API
+        function sendWhatsAppOrder() {
+            const name = document.getElementById('customer-name').value.trim();
+            const address = document.getElementById('customer-address').value.trim();
+
+            if(!name || !address) {
+                alert("Veuillez remplir votre nom et votre adresse pour la livraison.");
+                return;
+            }
+
+            let orderText = "Salam BORZ PROTEIN ! %0AJe souhaite passer une commande :%0A%0A";
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                orderText += ` ${item.quantity}x ${item.name} (${itemTotal} MAD)%0A`;
+            });
+
+            orderText += `%0A *TOTAL : ${total} MAD*%0A`;
+            orderText += `%0A *Nom :* ${name}`;
+            orderText += `%0A *Adresse :* ${address}`;
+            orderText += `%0A%0AMerci de confirmer ma commande !`;
+
+            // Numéro formaté au format international (Maroc : 212 + 617699682 sans le 0)
+            const phoneNumber = "212617699682"; 
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${orderText}`;
+
+            // Ouvre WhatsApp dans un nouvel onglet
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>

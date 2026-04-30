@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borz MMA — Casablanca Boulevard Ghandi</title>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="overflow-x-hidden bg-[#0E0E0E]"> 
+  
+ <!-- ═══════════════════════════════════════════════ NAV ═══ --> 
+ <nav id="navbar" class="absolute top-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 md:py-6"> 
+    
+   <!-- LOGO --> 
+   <a href="#" class="flex items-center gap-3 no-underline z-[60] relative"> 
+     <img src="images/LOGO BORZ KRATOS.png" alt="Borz MMA Logo" class="h-16 md:h-[100px] w-auto" /> 
+     <span class="hidden sm:block text-white text-[13px] tracking-[0.3em] uppercase font-normal">BORZ MMA</span> 
+   </a> 
+    
+   <!-- MENU PC (Disparaît sur téléphone) --> 
+   <div class="hidden lg:flex items-center gap-10"> 
+     <a href="#le-club" class="nav-link text-white no-underline">Le Club</a> 
+     <a href="#planning" class="nav-link text-white no-underline">Planning</a> 
+     <a href="#avis" class="nav-link text-white no-underline">Avis</a> 
+     <a href="#tarifs" class="nav-link text-white no-underline">Tarifs</a> 
+     <a href="food.html" class="nav-link text-[#b5fb12] font-bold no-underline">Borz Food</a> 
+     <a href="https://wa.me/212617699682" class="bg-[#b5fb12] text-black px-6 py-2 rounded-full font-bold uppercase text-sm no-underline"> 
+       Contactez nous ! 
+     </a> 
+   </div> 
+  
+   <!-- BOUTON BURGER (Apparaît sur téléphone) --> 
+   <button id="burger-btn" class="lg:hidden relative z-[60] text-[#b5fb12] focus:outline-none bg-black/50 p-2 rounded"> 
+     <svg id="burger-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> 
+     </svg> 
+   </button> 
+  
+   <!-- OVERLAY MENU MOBILE --> 
+   <div id="mobile-menu" class="fixed inset-0 bg-[#0a0a0a] z-50 hidden flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300"> 
+     <a href="#le-club" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Le Club</a> 
+     <a href="#planning" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Planning</a> 
+     <a href="#avis" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Avis</a> 
+     <a href="#tarifs" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Tarifs</a> 
+     <a href="food.html" class="mobile-link text-[#b5fb12] text-2xl font-['Outfit'] font-bold uppercase tracking-[0.1em] no-underline">Borz Food</a> 
+     <a href="https://wa.me/212617699682" class="mt-4 bg-[#b5fb12] text-black px-8 py-3 rounded-full font-bold uppercase no-underline"> 
+       Nous Contacter 
+     </a> 
+   </div> 
+  
+ </nav> 
+  
+ <!-- ═══════════════════════════════════════════════ HERO ══ --> 
+ <section style="position:relative;height:100vh;min-height:680px;background:#0E0E0E;" class="w-full"> 
+  
+   <!-- Background --> 
+   <div style="position:absolute;inset:0;background:linear-gradient(135deg,#111 0%,#222 40%,#0a0a0a 100%);"> 
+     <img src="images/BORZ BG.png" alt="Borz Background" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6;" /> 
+     <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.04" xmlns='http://www.w3.org/2000/svg'> 
+       <filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter> 
+       <rect width='100%' height='100%' filter='url(#noise)'/> 
+     </svg> 
+     <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"> 
+       <line x1="62%" y1="0" x2="38%" y2="100%" stroke="#2D7A3A" stroke-width="1"/> 
+     </svg> 
+   </div> 
+   <div class="hero-overlay" style="position:absolute;inset:0;"></div> 
+  
+   <!-- Content (Paddings corrigés pour mobile) --> 
+   <div class="relative z-10 h-full flex flex-col justify-end px-6 pb-16 md:px-20 md:pb-24"> 
+  
+     <div class="mb-7"> 
+       <span class="border border-white/20 px-4 py-2 text-white text-xs uppercase tracking-widest rounded-full backdrop-blur-sm"> 
+         Casablanca · Quartier Berger 
+       </span> 
+     </div> 
+  
+     <h1 class="cormorant text-[clamp(45px,8vw,112px)] font-light text-white leading-[0.9] tracking-tight m-0"> 
+       L'Art du Combat.<br/> 
+       <em class="not-italic text-[#b5fb12] font-style-italic inline-block mt-2">L'Exigence du Vrai.</em> 
+     </h1> 
+  
+     <p class="outfit text-base font-light text-white/70 tracking-wide max-w-[480px] mt-8 leading-relaxed"> 
+       Plus qu'un club de MMA — un espace de vie, de discipline et de transformation.<br/> 
+       Rejoignez la communauté Borz. 
+     </p> 
+  
+     <!-- Boutons (En colonne sur mobile, en ligne sur PC) --> 
+     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-10 w-full sm:w-auto"> 
+       <a href="#le-club" class="bg-[#b5fb12] text-black px-8 py-3 rounded text-sm uppercase font-bold tracking-widest no-underline text-center w-full sm:w-auto"> 
+         Qui sommes-nous ? 
+       </a> 
+       <a href="#le-club" class="text-white text-sm uppercase tracking-widest no-underline border border-white/20 px-8 py-3 rounded text-center w-full sm:w-auto hover:bg-white hover:text-black transition"> 
+         L'Esprit Borz 
+       </a> 
+     </div> 
+   </div> 
+ </section> 
+   
+ <!-- ═══════════════════════════════════════════════ MARQUEE ══ --> 
+ <div class="marquee-wrapper" role="marquee" aria-label="Sports de combat défilants"> 
+   <div class="marquee-track"> 
+     <!-- Set 1 --> 
+     <div class="marquee-set"> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Lutte</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Kickboxing</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Boxe</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>MMA</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Crossfit</span></div> 
+       <span class="sep">✦</span> 
+     </div> 
+     <!-- Set 2 --> 
+     <div class="marquee-set"> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Lutte</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Kickboxing</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Boxe</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>MMA</span></div> 
+       <span class="sep">✦</span> 
+       <div class="marquee-item"><img src="images/LOGO BORZ KRATOS.png" alt="Logo"><span>Crossfit</span></div> 
+       <span class="sep">✦</span> 
+     </div> 
+   </div> 
+ </div> 
+  
+ <!-- ═══════════════════════════════════════════════ STATS BAR ══ --> 
+ <div class="bg-black py-12 px-6 md:px-20 border-b border-[#2D7A3A]/20 w-full"> 
+   <!-- Ici j'ai remplacé ta grille fixe par une grille responsive : 1 colonne sur mobile, 3 sur PC --> 
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0"> 
+      
+     <div class="text-center md:border-r border-[#2D7A3A]/20 pb-8 md:pb-0 border-b md:border-b-0"> 
+       <div class="cormorant text-[52px] font-light text-[#b5fb12] leading-none">4</div> 
+       <div class="text-[11px] tracking-[0.2em] uppercase text-white/65 mt-2">Disciplines d'élite</div> 
+     </div> 
+      
+     <div class="text-center md:border-r border-[#2D7A3A]/20 pb-8 md:pb-0 border-b md:border-b-0"> 
+       <div class="cormorant text-[52px] font-light text-[#b5fb12] leading-none">700<em class="italic text-2xl">m²</em></div> 
+       <div class="text-[11px] tracking-[0.2em] uppercase text-white/65 mt-2">Espace d'entraînement</div> 
+     </div> 
+      
+     <div class="text-center"> 
+       <div class="cormorant text-[40px] md:text-[52px] font-light text-[#b5fb12] leading-none">Quartier Berger</div> 
+       <div class="text-[11px] tracking-[0.2em] uppercase text-white/65 mt-2">Cœur de Casablanca</div> 
+     </div> 
+  
+   </div> 
+ </div> 
+  
+ <!-- ═══════════════════════════════════════════════ LE CLUB ══ --> 
+ <section id="le-club" class="bg-black text-white py-16 md:py-24 px-6 md:px-20 w-full"> 
+   <div class="text-center mb-16"> 
+     <h2 class="cormorant text-3xl md:text-[56px] font-light text-white uppercase tracking-[0.1em]">Notre histoire</h2> 
+     <span class="inline-block w-[60px] h-px bg-[#b5fb12] mt-4"></span> 
+   </div> 
+  
+   <!-- Grille responsive : 1 col sur mobile, 2 cols sur PC --> 
+   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"> 
+      
+     <!-- Texte --> 
+     <div> 
+       <span class="border border-white/20 text-white text-xs px-3 py-1 uppercase rounded mb-5 inline-block">L'Elite à Casablanca</span> 
+       <h2 class="cormorant text-4xl md:text-[72px] font-light leading-[0.95] my-5"> 
+         L'Esprit Borz :<br/> 
+         <em class="text-[#b5fb12] italic">Dépassement &amp; Honneur.</em> 
+       </h2> 
+       <p class="outfit text-base font-light text-white/70 leading-[1.8] mt-8"> 
+         Au cœur de Casablanca, Borz MMA n'est pas qu'une simple salle de sport. C'est un sanctuaire dédié à l'excellence physique et mentale. 
+       </p> 
+        
+       <div class="mt-12"> 
+         <span class="block w-12 h-px bg-[#b5fb12] mb-6"></span> 
+         <!-- Atouts empilés sur mobile --> 
+         <div class="flex flex-col sm:flex-row gap-8"> 
+           <div> 
+             <div class="text-2xl text-[#b5fb12] font-['Barlow_Condensed']">TECHNIQUE</div> 
+             <div class="text-[11px] uppercase tracking-[0.1em] text-white/65">Maîtrise totale</div> 
+           </div> 
+           <div> 
+             <div class="text-2xl text-[#b5fb12] font-['Barlow_Condensed']">FORCE</div> 
+             <div class="text-[11px] uppercase tracking-[0.1em] text-white/65">Puissance brute</div> 
+           </div> 
+           <div> 
+             <div class="text-2xl text-[#b5fb12] font-['Barlow_Condensed']">MENTAL</div> 
+             <div class="text-[11px] uppercase tracking-[0.1em] text-white/65">Résilience pure</div> 
+           </div> 
+         </div> 
+       </div> 
+     </div> 
+  
+     <!-- Images --> 
+     <div class="grid grid-cols-2 gap-4"> 
+       <div class="col-span-2 aspect-video bg-[#151515] border border-[#b5fb12]/20 overflow-hidden"> 
+         <img src="images/BORZ1.jpg" alt="Borz Main" class="w-full h-full object-cover" /> 
+       </div> 
+       <div class="aspect-square bg-[#151515] border border-[#b5fb12]/20 overflow-hidden"> 
+         <img src="images/BORZ2.jpg" alt="Borz Training" class="w-full h-full object-cover" /> 
+       </div> 
+       <div class="aspect-square bg-[#151515] border border-[#b5fb12]/20 overflow-hidden"> 
+         <img src="images/BORZ3.jpg" alt="Borz Training" class="w-full h-full object-cover" /> 
+       </div> 
+     </div> 
+  
+   </div> 
+ </section> 
+  
+ <!-- ═══════════════════════════════════════════════ PLANNING ══ -->
+<section id="planning" class="section-padding" style="background: #F8F6F1; padding-top: 80px; padding-bottom: 80px;">
+  <div class="reveal" style="text-align: center; margin-bottom: 50px;">
+    <span class="tag-pill" style="color: #2D7A3A; border-color: #2D7A3A; margin-bottom: 20px;">Organisation</span>
+    <h2 class="cormorant" style="font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: #0E0E0E; text-transform: uppercase; letter-spacing: 0.1em;">
+      Planning des séances
+    </h2>
+    <span style="display: inline-block; width: 60px; height: 1px; background: #2D7A3A; margin-top: 16px;"></span>
+  </div>
+
+  <div class="reveal" style="max-width: 1100px; margin: 0 auto; background: #fff; padding: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid rgba(45,122,58,0.1);">
+    <img src="images/Sceances.jpg" alt="Planning Borz MMA" style="width: 100%; height: auto; display: block;" />
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ AVIS ══ -->
+<section id="avis" class="avis-section section-padding">
+  <header class="section-header-avis reveal">
+    <div class="section-tag-avis">Témoignages membres</div>
+    <h2 class="section-title-avis">Ils se sont <em>dépassés</em><br>chez BORZ MMA</h2>
+  </header>
+
+  <div class="cards-avis reveal">
+    <article class="card-avis">
+      <span class="quote-mark-avis">"</span>
+      <div class="stars-avis">⭐⭐⭐⭐⭐</div>
+      <p class="quote-long-avis">
+        BORZ MMA représente l'excellence des arts martiaux à Casablanca. L'encadrement de Ismael et Imrane est exceptionnel — précis, exigeant et bienveillant à la fois. Les installations sont d'un niveau qu'on ne trouve nulle part ailleurs dans la ville.
+      </p>
+      <blockquote class="quote-short-avis">
+        "L'excellence des arts martiaux au cœur de Casablanca."
+      </blockquote>
+      <div class="author-avis">
+        <div class="avatar-avis">OT</div>
+        <div>
+          <div class="author-name-avis">Otmane</div>
+          <div class="author-label-avis">Membre BORZ MMA</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card-avis">
+      <span class="quote-mark-avis">"</span>
+      <div class="stars-avis">⭐⭐⭐⭐⭐</div>
+      <p class="quote-long-avis">
+        La première vraie salle de MMA de Casablanca — et ça se sent dès qu'on franchit la porte. Les équipements sont au niveau des meilleurs clubs, et l'équipe est d'un dévouement rare. On sent que chaque coach est là pour toi.
+      </p>
+      <blockquote class="quote-short-avis">
+        "La première vraie salle de MMA de Casa — une équipe hors du commun."
+      </blockquote>
+      <div class="author-avis">
+        <div class="avatar-avis">RE</div>
+        <div>
+          <div class="author-name-avis">Reda</div>
+          <div class="author-label-avis">Membre BORZ MMA</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card-avis">
+      <span class="quote-mark-avis">"</span>
+      <div class="stars-avis">⭐⭐⭐⭐⭐</div>
+      <p class="quote-long-avis">
+        Un coach au sommet de son art. Chaque séance avec lui, c'est une nouvelle leçon — technique, mentale, physique. Il élève chaque pratiquant à son meilleur niveau, quel que soit son point de départ.
+      </p>
+      <blockquote class="quote-short-avis">
+        "Un coaching d'élite qui transforme chaque séance."
+      </blockquote>
+      <div class="author-avis">
+        <div class="avatar-avis">OU</div>
+        <div>
+          <div class="author-name-avis">Oussama</div>
+          <div class="author-label-avis">Membre BORZ MMA</div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="banner-wrapper-avis reveal">
+    <div class="banner-track-avis">
+      <div class="banner-set-avis">
+        <div class="banner-item-avis">
+          <span class="banner-stars-avis">⭐⭐⭐⭐⭐</span>
+          <span class="banner-text-avis">"L'excellence des arts martiaux au cœur de Casablanca."</span>
+          <span class="banner-author-avis">— Otmane</span>
+        </div>
+        <span class="banner-sep-avis">✦</span>
+        <div class="banner-item-avis">
+          <span class="banner-stars-avis">⭐⭐⭐⭐⭐</span>
+          <span class="banner-text-avis">"La première vraie salle de MMA de Casa — une équipe hors du commun."</span>
+          <span class="banner-author-avis">— Reda</span>
+        </div>
+        <span class="banner-sep-avis">✦</span>
+        <div class="banner-item-avis">
+          <span class="banner-stars-avis">⭐⭐⭐⭐⭐</span>
+          <span class="banner-text-avis">"Un coaching d'élite qui transforme chaque séance."</span>
+          <span class="banner-author-avis">— Oussama</span>
+        </div>
+        <span class="banner-sep-avis">✦</span>
+      </div>
+      <div class="banner-set-avis">
+        <div class="banner-item-avis">
+          <span class="banner-stars-avis">⭐⭐⭐⭐⭐</span>
+          <span class="banner-text-avis">"L'excellence des arts martiaux au cœur de Casablanca."</span>
+          <span class="banner-author-avis">— Otmane</span>
+        </div>
+        <span class="banner-sep-avis">✦</span>
+        <div class="banner-item-avis">
+          <span class="banner-stars-avis">⭐⭐⭐⭐⭐</span>
+          <span class="banner-text-avis">"La première vraie salle de MMA de Casa — une équipe hors du commun."</span>
+          <span class="banner-author-avis">— Reda</span>
+        </div>
+        <span class="banner-sep-avis">✦</span>
+        <div class="banner-item-avis">
+          <span class="banner-stars-avis">⭐⭐⭐⭐⭐</span>
+          <span class="banner-text-avis">"Un coaching d'élite qui transforme chaque séance."</span>
+          <span class="banner-author-avis">— Oussama</span>
+        </div>
+        <span class="banner-sep-avis">✦</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ TARIFS ══ -->
+<section id="tarifs" class="pricing-section section-padding" style="padding-top: 60px;">
+  <header class="section-header-pricing">
+    <div class="tag-pricing">Nos offres d'adhésion</div>
+    <h2 class="section-title-pricing">Choisissez votre<br><em>niveau d'engagement</em></h2>
+    <p class="section-sub-pricing">Chaque formule est conçue pour vous propulser vers vos objectifs — du renforcement physique au combat de haut niveau.</p>
+  </header>
+
+  <div class="pricing-grid">
+    <div class="card-pricing">
+      <div class="plan-label-pricing">Le Standard</div>
+      <div class="plan-name-pricing">Musculation<br>Seule</div>
+      <div class="price-block-pricing">
+        <div class="price-main-pricing">
+          <span class="price-amount-pricing">300</span>
+          <span class="price-currency-pricing">MAD</span>
+        </div>
+        <div class="price-period-pricing">par mois</div>
+      </div>
+      <div class="divider-pricing"></div>
+      <ul class="features-pricing">
+        <li>Accès illimité au plateau de performance de 700 m² — câbles, racks, zones fonctionnelles</li>
+        <li>Équipements premium entretenus pour un entraînement sans compromis</li>
+        <li>Vestiaires modernes et espaces de récupération inclus</li>
+        <li>Environnement de guerriers : une communauté qui pousse plus loin</li>
+      </ul>
+      <a href="https://wa.me/+212617699682?text=Bonjour BORZ, je suis intéressé(e) par la formule MUSCULATION SEULE à 300 MAD/mois. J'aimerais connaître les modalités d'inscription et visiter le plateau de performance." class="cta-pricing">Nous contacter</a>
+    </div>
+
+    <div class="card-pricing card-elite">
+      <div class="badge-pricing">Le choix le plus choisi</div>
+      <div class="plan-label-pricing">L'Élite — Accès Total</div>
+      <div class="plan-name-pricing">All Access<br>MMA + Muscu</div>
+      <div class="price-block-pricing">
+        <div class="price-main-pricing">
+          <span class="price-amount-pricing">6 000</span>
+          <span class="price-currency-pricing">MAD</span>
+        </div>
+        <div class="price-period-pricing">par an — engagement annuel</div>
+        <span class="price-equiv-pricing">= 500 MAD / mois seulement</span>
+        <div class="price-installment-pricing">
+          Ou <strong>4 × 1 500 MAD</strong> sans frais — aucun intérêt, aucune surprise.
+        </div>
+      </div>
+      <div class="divider-pricing"></div>
+      <ul class="features-pricing">
+        <li>Accès illimité à <strong style="color:var(--lime);font-weight:500;">tous les cours de MMA</strong> — Lutte, Kickboxing, Boxe, Grappling</li>
+        <li>Coaching personnalisé de Ismael & Hamza, formateurs d'élite au palmarès reconnu</li>
+        <li>Plateau de performance 700 m² disponible 7j/7 pour vos sessions libres</li>
+        <li>Accès prioritaire aux événements, sparrings fermés et stages exclusifs BORZ</li>
+      </ul>
+      <a href="https://wa.me/+212617699682?text=Bonjour BORZ, je suis intéressé(e) par la formule ALL ACCESS MMA + MUSCULATION à 6 000 MAD/an. J'aimerais connaître les modalités d'inscription et visiter le plateau de performance." class="cta-pricing cta-elite-pricing">Nous contacter</a>
+    </div>
+
+    <div class="card-pricing">
+      <div class="plan-label-pricing">Le Spécialiste</div>
+      <div class="plan-name-pricing">MMA<br>Technique</div>
+      <div class="price-block-pricing">
+        <div class="price-main-pricing">
+          <span class="price-amount-pricing">500</span>
+          <span class="price-currency-pricing">MAD</span>
+        </div>
+        <div class="price-period-pricing">par mois</div>
+      </div>
+      <div class="divider-pricing"></div>
+      <ul class="features-pricing">
+        <li>Cours techniques dirigés par Imrane & Ismael — rigueur, précision, progression réelle</li>
+        <li>Apprentissage intensif des disciplines du combat : stand-up, clinch, sol</li>
+        <li>Petits groupes pour un suivi individualisé et des corrections en direct</li>
+        <li>Une méthode éprouvée qui forge des combattants, pas des spectateurs</li>
+      </ul>
+      <a href="https://wa.me/+212617699682?text=Bonjour BORZ, je suis intéressé(e) par la formule MMA TECHNIQUE à 500 MAD/mois. J'aimerais connaître les modalités d'inscription et visiter le plateau de performance." class="cta-pricing">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0E0E0E;padding:60px 80px 48px;border-top:1px solid rgba(45,122,58,0.15);">
+  <div style="display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.65);">
+      © 2025 Borz MMA Casablanca
+    </span>
+    <div style="display:flex;gap:32px;">
+      <a target="_blank" href="https://www.instagram.com/borz_mma_club/" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;">Instagram</a>
+      <a href="https://wa.me/+212617699682" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;">WhatsApp</a>
+      <a href="tel:212621458745" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
