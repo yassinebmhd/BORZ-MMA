@@ -32,25 +32,59 @@
             }
         }
     </script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-darkBg text-white font-sans antialiased overflow-x-hidden">
 
-    <!-- HEADER -->
-    <header class="fixed top-0 w-full bg-black/80 backdrop-blur-md border-b border-white/10 z-40 px-6 py-4 flex justify-between items-center transition-all">
-        <div class="flex items-center gap-2">
-            <h1 class="font-serif text-2xl tracking-widest text-white font-bold cursor-pointer">
-                BORZ<span class="text-neon">PROTEIN</span>
-            </h1>
-        </div>
-        <button onclick="toggleCart()" class="relative text-white hover:text-neon transition duration-300">
-            <i class="fas fa-shopping-cart text-xl"></i>
-            <span id="cart-count" class="absolute -top-2 -right-2 bg-neon text-black text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center border border-black">0</span>
+    <!-- ═══════════════════════════════════════════════ NAV ═══ --> 
+    <nav id="navbar" class="absolute top-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 md:py-6"> 
+       
+      <!-- LOGO --> 
+      <a href="index.html" class="flex items-center gap-3 no-underline z-[60] relative"> 
+        <img src="images/LOGO_BORZ_PROTEIN.png" alt="Borz Protein Logo" class="h-16 md:h-[100px] w-auto" /> 
+        <span class="hidden sm:block text-white text-[13px] tracking-[0.3em] uppercase font-normal">BORZ PROTEIN</span> 
+      </a> 
+       
+      <!-- MENU PC (Disparaît sur téléphone) --> 
+      <div class="hidden lg:flex items-center gap-10"> 
+        <a href="#menu" class="nav-link text-white no-underline">Plats</a> 
+        <a href="#jus" class="nav-link text-white no-underline">Jus</a> 
+        <a href="#desserts" class="nav-link text-white no-underline">Desserts</a> 
+        <button onclick="toggleCart()" class="nav-link text-[#b5fb12] font-bold no-underline flex items-center gap-2">
+            <i class="fas fa-shopping-cart"></i> Panier
+            <span id="cart-count-nav" class="bg-[#b5fb12] text-black text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center">0</span>
         </button>
-    </header>
-
+        <a href="index.html" class="bg-[#b5fb12] text-black px-6 py-2 rounded-full font-bold uppercase text-sm no-underline"> 
+          Borz MMA 
+        </a> 
+      </div> 
+   
+      <!-- BOUTON BURGER (Apparaît sur téléphone) --> 
+      <button id="burger-btn" class="lg:hidden relative z-[60] text-[#b5fb12] focus:outline-none bg-black/50 p-2 rounded"> 
+        <svg id="burger-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> 
+        </svg> 
+      </button> 
+   
+      <!-- OVERLAY MENU MOBILE --> 
+      <div id="mobile-menu" class="fixed inset-0 bg-[#0a0a0a] z-50 hidden flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300"> 
+        <a href="#menu" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Plats</a> 
+        <a href="#jus" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Jus</a> 
+        <a href="#desserts" class="mobile-link text-white text-2xl font-['Outfit'] uppercase tracking-[0.1em] no-underline">Desserts</a> 
+        <button onclick="toggleCart(); if(typeof toggleMenu === 'function') toggleMenu();" class="mobile-link text-[#b5fb12] text-2xl font-['Outfit'] font-bold uppercase tracking-[0.1em] no-underline">
+            Panier (<span id="cart-count-mobile">0</span>)
+        </button> 
+        <a href="index.html" class="mt-4 bg-[#b5fb12] text-black px-8 py-3 rounded-full font-bold uppercase no-underline"> 
+          Borz MMA 
+        </a> 
+      </div> 
+   
+    </nav> 
+   
     <!-- HERO SECTION -->
     <section class="relative h-screen flex flex-col justify-center items-center text-center px-4" 
-             style="background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,1)), url('images/la sanne.webp') center/cover no-repeat;">
+             style="background: linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(10,10,10,1)), url('images/Shredded_man_beard.png') center/cover no-repeat;">
         <h2 class="font-serif text-5xl md:text-7xl text-white mb-6 tracking-wide drop-shadow-lg">KOUL BACH<span class="text-neon"> TWLI GHOUL.</span></h2>
         <p class="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 font-sans tracking-wide">
             Carburant premium pour la performance. <br class="hidden md:block"> Sans sucre ajouté, sans pain.
@@ -174,9 +208,85 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-white/10 bg-black py-8 text-center">
-        <h2 class="font-serif text-xl tracking-widest text-white mb-4">BORZ<span class="text-neon">PROTEIN</span></h2>
-        <p class="text-gray-500 text-sm">© 2026 BORZ PROTEIN. Dépassement & Honneur.</p>
+    <footer class="bg-[#0E0E0E] text-white/70 py-16 px-6 md:px-20 border-t border-white/10 mt-20">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
+        
+        <!-- Colonne 1 : Identité & Description -->
+        <div class="flex flex-col gap-6 text-left">
+          <div class="flex items-center gap-4">
+            <img src="images/LOGO BORZ KRATOS.png" alt="Borz MMA Logo" class="h-14 md:h-16 w-auto" />
+            <span class="text-white text-xl md:text-2xl tracking-[0.2em] font-bold">BORZ MMA</span>
+          </div>
+          <p class="text-sm leading-relaxed max-w-sm">
+            L'élite des sports de combat et de la nutrition de performance à Casablanca. Dépassement, discipline et honneur.
+          </p>
+        </div>
+
+        <!-- Colonne 2 : Navigation -->
+        <div class="text-left">
+          <h3 class="text-white text-lg font-bold mb-8 tracking-wider uppercase text-sm">Navigation</h3>
+          <ul class="flex flex-col gap-4 text-sm">
+            <li><a href="index.html" class="hover:text-[#b5fb12] transition-colors duration-300">Accueil MMA</a></li>
+            <li><a href="index.html#planning" class="hover:text-[#b5fb12] transition-colors duration-300">Planning</a></li>
+            <li><a href="index.html#tarifs" class="hover:text-[#b5fb12] transition-colors duration-300">Tarifs</a></li>
+            <li><a href="food.html" class="hover:text-[#b5fb12] transition-colors duration-300">Borz Food</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 : Contactez-nous -->
+        <div class="text-left">
+          <h3 class="text-[#b5fb12] text-lg font-bold mb-8 tracking-wider uppercase text-sm">Contactez-nous</h3>
+          <ul class="flex flex-col gap-5 text-sm">
+            <li class="flex items-center gap-4">
+              <i class="fas fa-user text-[#b5fb12] w-5 text-center"></i>
+              <span>Mr Julien</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <i class="fas fa-map-marker-alt text-[#b5fb12] w-5 text-center mt-1"></i>
+              <span class="leading-relaxed">5, rue des Asphodèles Maarif extension, Casablanca, Morocco 20380</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fas fa-phone-alt text-[#b5fb12] w-5 text-center"></i>
+              <div class="flex flex-col gap-1">
+                <a href="tel:+212617699682" class="hover:text-[#b5fb12] transition-colors duration-300">+212 6 XX XX XX XX</a>
+                <a href="tel:+212500000000" class="hover:text-[#b5fb12] transition-colors duration-300">+212 5 XX XX XX XX</a>
+              </div>
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fas fa-envelope text-[#b5fb12] w-5 text-center"></i>
+              <a href="mailto:contact@borzmma.mock" class="hover:text-[#b5fb12] transition-colors duration-300">contact@borzmma.mock</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-white/30">
+          © 2026 Borz MMA Casablanca. Tous droits réservés.
+        </p>
+        
+        <div class="flex items-center gap-4">
+          <a href="https://www.instagram.com/borz_mma_club/" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/BORZMMACasablanca" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com/@borz_mma_club" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.youtube.com/@BORZFCCASABLANCA" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://wa.me/212617699682" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="tel:+212617699682" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
     </footer>
 
     <!-- CART SYSTEM & CHECKOUT (OFF-CANVAS) -->
@@ -240,7 +350,40 @@
     <script>
         let cart = [];
 
-        // Gestion de l'affichage du panneau latéral
+        // --- Burger Menu Logic ---
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const burgerIcon = document.getElementById('burger-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            if (!burgerBtn || !mobileMenu || !burgerIcon) return;
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+                burgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }, 300);
+                burgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        if (burgerBtn) burgerBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => {
+            if (isMenuOpen) toggleMenu();
+        }));
+
+        // --- Cart System Logic ---
         function toggleCart() {
             const sidebar = document.getElementById('cart-sidebar');
             const backdrop = document.getElementById('cart-backdrop');
@@ -248,8 +391,10 @@
             if (sidebar.classList.contains('translate-x-full')) {
                 sidebar.classList.remove('translate-x-full');
                 backdrop.classList.remove('hidden');
-                showCartStep(); // S'assurer qu'on ouvre toujours sur le panier
+                showCartStep();
                 setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+                // Si le menu mobile est ouvert, on le ferme
+                if (isMenuOpen) toggleMenu();
             } else {
                 sidebar.classList.add('translate-x-full');
                 backdrop.classList.add('opacity-0');
@@ -257,7 +402,6 @@
             }
         }
 
-        // Navigation entre Panier et Formulaire de Confirmation
         function showCheckoutStep() {
             if(cart.length === 0) return;
             document.getElementById('cart-step').classList.add('hidden');
@@ -273,7 +417,6 @@
             document.getElementById('back-to-cart-btn').classList.add('hidden');
         }
 
-        // Logique du Panier
         function addToCart(name, price) {
             const existingItem = cart.find(item => item.name === name);
             if (existingItem) {
@@ -292,7 +435,7 @@
         function removeFromCart(name) {
             cart = cart.filter(item => item.name !== name);
             updateCartUI();
-            if(cart.length === 0) showCartStep(); // Retour au panier si on vide tout dans le checkout
+            if(cart.length === 0) showCartStep();
         }
 
         function updateQuantity(name, delta) {
@@ -311,7 +454,8 @@
             const cartItemsContainer = document.getElementById('cart-items');
             const cartTotalElement = document.getElementById('cart-total');
             const cartSubtotalElement = document.getElementById('cart-subtotal');
-            const cartCountElement = document.getElementById('cart-count');
+            const cartCountNav = document.getElementById('cart-count-nav');
+            const cartCountMobile = document.getElementById('cart-count-mobile');
             const checkoutBtn = document.getElementById('checkout-btn');
 
             cartItemsContainer.innerHTML = '';
@@ -355,14 +499,10 @@
             cartSubtotalElement.innerText = formattedTotal;
             cartTotalElement.innerText = formattedTotal;
             
-            if (cartCountElement.innerText !== count.toString()) {
-                cartCountElement.innerText = count;
-                cartCountElement.classList.add('scale-150');
-                setTimeout(() => cartCountElement.classList.remove('scale-150'), 200);
-            }
+            if (cartCountNav) cartCountNav.innerText = count;
+            if (cartCountMobile) cartCountMobile.innerText = count;
         }
 
-        // ENVOI DE LA COMMANDE VIA WHATSAPP API
         function sendWhatsAppOrder() {
             const name = document.getElementById('customer-name').value.trim();
             const address = document.getElementById('customer-address').value.trim();
@@ -386,11 +526,8 @@
             orderText += `%0A *Adresse :* ${address}`;
             orderText += `%0A%0AMerci de confirmer ma commande !`;
 
-            // Numéro formaté au format international (Maroc : 212 + 617699682 sans le 0)
             const phoneNumber = "212617699682"; 
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${orderText}`;
-
-            // Ouvre WhatsApp dans un nouvel onglet
             window.open(whatsappUrl, '_blank');
         }
     </script>

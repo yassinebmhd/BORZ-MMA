@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +18,7 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="overflow-x-hidden bg-[#0E0E0E]"> 
+<body class="overflow-x-hidden w-full max-w-full bg-[#0E0E0E]"> 
   
  <!-- ═══════════════════════════════════════════════ NAV ═══ --> 
  <nav id="navbar" class="absolute top-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 md:py-6"> 
@@ -34,7 +35,7 @@
      <a href="#planning" class="nav-link text-white no-underline">Planning</a> 
      <a href="#avis" class="nav-link text-white no-underline">Avis</a> 
      <a href="#tarifs" class="nav-link text-white no-underline">Tarifs</a> 
-     <a href="food.html" class="nav-link text-[#b5fb12] font-bold no-underline">Borz Food</a> 
+     <a href="food.html" class="nav-link text-[#b5fb12] font-bold no-underline">Borz PROTEIN</a> 
      <a href="https://wa.me/212617699682" class="bg-[#b5fb12] text-black px-6 py-2 rounded-full font-bold uppercase text-sm no-underline"> 
        Contactez nous ! 
      </a> 
@@ -420,15 +421,83 @@
   </div>
 </section>
 
-<footer style="background:#0E0E0E;padding:60px 80px 48px;border-top:1px solid rgba(45,122,58,0.15);">
-  <div style="display:flex;align-items:center;justify-content:space-between;">
-    <span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.65);">
-      © 2025 Borz MMA Casablanca
-    </span>
-    <div style="display:flex;gap:32px;">
-      <a target="_blank" href="https://www.instagram.com/borz_mma_club/" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;">Instagram</a>
-      <a href="https://wa.me/+212617699682" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;">WhatsApp</a>
-      <a href="tel:212621458745" style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;">Contact</a>
+<footer class="bg-[#0E0E0E] text-white/70 py-16 px-6 md:px-20 border-t border-white/10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
+    
+    <!-- Colonne 1 : Identité & Description -->
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center gap-4">
+        <img src="images/LOGO BORZ KRATOS.png" alt="Borz MMA Logo" class="h-14 md:h-16 w-auto" />
+        <span class="text-white text-xl md:text-2xl tracking-[0.2em] font-bold">BORZ MMA</span>
+      </div>
+      <p class="text-sm leading-relaxed max-w-sm">
+        L'élite des sports de combat et de la nutrition de performance à Casablanca. Dépassement, discipline et honneur.
+      </p>
+    </div>
+
+    <!-- Colonne 2 : Navigation -->
+    <div>
+      <h3 class="text-white text-lg font-bold mb-8 tracking-wider uppercase text-sm">Navigation</h3>
+      <ul class="flex flex-col gap-4 text-sm">
+        <li><a href="index.html" class="hover:text-[#b5fb12] transition-colors duration-300">Accueil MMA</a></li>
+        <li><a href="index.html#planning" class="hover:text-[#b5fb12] transition-colors duration-300">Planning</a></li>
+        <li><a href="index.html#tarifs" class="hover:text-[#b5fb12] transition-colors duration-300">Tarifs</a></li>
+        <li><a href="food.html" class="hover:text-[#b5fb12] transition-colors duration-300">Borz Food</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 3 : Contactez-nous -->
+    <div>
+      <h3 class="text-[#b5fb12] text-lg font-bold mb-8 tracking-wider uppercase text-sm">Contactez-nous</h3>
+      <ul class="flex flex-col gap-5 text-sm">
+        <li class="flex items-center gap-4">
+          <i class="fas fa-user text-[#b5fb12] w-5 text-center"></i>
+          <span>Mr Julien</span>
+        </li>
+        <li class="flex items-start gap-4">
+          <i class="fas fa-map-marker-alt text-[#b5fb12] w-5 text-center mt-1"></i>
+          <span class="leading-relaxed">5, rue des Asphodèles Maarif extension, Casablanca, Morocco 20380</span>
+        </li>
+        <li class="flex items-center gap-4">
+          <i class="fas fa-phone-alt text-[#b5fb12] w-5 text-center"></i>
+          <div class="flex flex-col gap-1">
+            <a href="tel:+212617699682" class="hover:text-[#b5fb12] transition-colors duration-300">+212 6 XX XX XX XX</a>
+            <a href="tel:+212500000000" class="hover:text-[#b5fb12] transition-colors duration-300">+212 5 XX XX XX XX</a>
+          </div>
+        </li>
+        <li class="flex items-center gap-4">
+          <i class="fas fa-envelope text-[#b5fb12] w-5 text-center"></i>
+          <a href="mailto:contact@borzmma.mock" class="hover:text-[#b5fb12] transition-colors duration-300">contact@borzmma.mock</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+    <p class="text-[10px] uppercase tracking-[0.2em] text-white/30">
+      © 2026 Borz MMA Casablanca. Tous droits réservés.
+    </p>
+    
+    <div class="flex items-center gap-4">
+      <a href="https://www.instagram.com/borz_mma_club/" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/BORZMMACasablanca" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.tiktok.com/@borz_mma_club" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.youtube.com/@BORZFCCASABLANCA" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://wa.me/212617699682" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:+212617699682" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#b5fb12] hover:border-[#b5fb12] hover:text-black transition-all duration-300">
+        <i class="fas fa-phone"></i>
+      </a>
     </div>
   </div>
 </footer>
