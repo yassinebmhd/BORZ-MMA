@@ -69,7 +69,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
 /* Tag pill */
 .tag-pill { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
             font-weight: 500; padding: 4px 12px; border: 1px solid rgba(255, 255, 255, 0.65);
-            color: rgba(255, 255, 255, 0.65); display: inline-block; }
+            color: rgba(255, 255, 255, 0.65); display: inline-block; border-radius: 8px; }
 
 /* Infinite Marquee */
 .marquee-wrapper {
@@ -257,7 +257,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
   color: var(--lime);
   border: 1px solid var(--lime-border);
   padding: 5px 14px;
-  border-radius: 2px;
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 .section-title-pricing {
@@ -296,7 +296,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
 .card-pricing {
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-radius: 4px;
+  border-radius: 16px;
   padding: 36px 28px 32px;
   display: flex;
   flex-direction: column;
@@ -328,7 +328,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
   letter-spacing: .18em;
   text-transform: uppercase;
   padding: 5px 16px;
-  border-radius: 2px;
+  border-radius: 8px;
   white-space: nowrap;
 }
 
@@ -395,7 +395,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
   letter-spacing: .1em;
   text-transform: uppercase;
   padding: 4px 10px;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 .price-installment-pricing {
   margin-top: 10px;
@@ -451,7 +451,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
   font-size: .95rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  border-radius: 2px;
+  border-radius: 12px;
   cursor: pointer;
   text-decoration: none;
   transition: all .2s;
@@ -497,7 +497,7 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
   color: #b5fb12;
   border: 1px solid rgba(181,251,18,.18);
   padding: 5px 14px;
-  border-radius: 2px;
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
@@ -525,14 +525,14 @@ hr.green { border: none; border-top: 1px solid #2D7A3A44; }
 }
 
 .card-avis {
-  background: #111111;
-  border: 1px solid rgba(181,251,18,.18);
-  border-radius: 4px;
-  padding: 36px 32px 30px;
+  background: #111;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.05);
+  position: relative;
+  transition: transform .3s;
   display: flex;
   flex-direction: column;
-  position: relative;
-  transition: border-color .25s, transform .25s;
   overflow: hidden;
 }
 
